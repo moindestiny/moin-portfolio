@@ -7,6 +7,7 @@ export interface Project {
   link: string; // External link
   tech: string[];
   screenshots?: string[];
+  role: string;
 }
 
 export interface BlogPost {

@@ -16,7 +16,7 @@ export const Footer: React.FC = () => {
             ))}
           </div>
           <div className="text-zinc-400 dark:text-zinc-500 text-sm text-center md:text-right">
-            <p>&copy; {new Date().getFullYear()} Alex Dev. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Moin Dev. All rights reserved.</p>
             <p className="mt-1 text-xs">Built with React, Tailwind & Gemini.</p>
           </div>
         </div>

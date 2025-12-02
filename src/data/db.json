@@ -1,0 +1,226 @@
+{
+  "projects": [
+    {
+      "slug": "koderoute",
+      "title": "Koderoute.com",
+      "description": "Complete frontend website with Google Sheets integration as database",
+      "longDescription": "Built a complete frontend website with Google Sheets integration as database. Implemented real-time data sync, dynamic content loading. Used React for UI components and API integration for seamless sheet connectivity. The project demonstrates modern web development practices with efficient state management and responsive design.",
+      "icon": "/assets/projects/koderoute/icon.svg",
+      "link": "https://koderoute.com",
+      "tech": ["React", "Google Sheets API", "REST API", "JavaScript"],
+      "screenshots": [
+        "/assets/projects/koderoute/koderoute1.png",
+        "/assets/projects/koderoute/koderoute2.png"
+      ],
+      "role": "Full Stack Developer"
+    },
+    {
+      "slug": "pretender-dashboard",
+      "title": "Pretender Dashboard",
+      "description": "Dashboard for managing tenders, MIS reports, and work orders",
+      "longDescription": "Developed a comprehensive dashboard for managing tenders, MIS reports, and work orders. Implemented frontend modules with REST APIs, and used TanStack Query for efficient state management and real-time data caching across modules. Features include advanced filtering, sorting, and real-time updates for better workflow management.",
+      "icon": "/assets/projects/pretender/icon.svg",
+      "link": "#",
+      "tech": ["React", "TanStack Query", "REST API", "Redux Toolkit"],
+      "screenshots": [
+        "/assets/projects/pretender/pretender1.png",
+        "/assets/projects/pretender/pretender2.png"
+      ],
+      "role": "Frontend Developer"
+    },
+    {
+      "slug": "unityfusion-website",
+      "title": "UnityFusion Website",
+      "description": "Complete UI/UX design for website",
+      "longDescription": "Designed complete UI/UX for unityfusion.in website and admin dashboard. Used Figma for prototyping and delivered mobile-responsive design with modern aesthetics. The design focuses on user experience with intuitive navigation and clean visual hierarchy.",
+      "icon": "/assets/projects/unityfusion/icon.svg",
+      "link": "https://www.figma.com/proto/26fwnv5EDXW48j2HfVhWU6/UnityFusion-Tech-Solutions?node-id=131-109&t=DuVVgd4pLYPSiLcC-1",
+      "tech": ["Figma", "UI/UX Design", "Prototyping", "Responsive Design"],
+      "screenshots": [
+        "/assets/projects/unityfusion/unityfusion1.png",
+        "/assets/projects/unityfusion/unityfusion2.png"
+      ],
+      "role": "UI/UX Designer"
+    },
+    {
+      "slug": "payment-gateway",
+      "title": "Payment Gateway UI/UX – Figma",
+      "description": "End-to-end payment gateway UI/UX design built in Figma.",
+      "longDescription": "Crafted a full payment-gateway experience inspired by modern platforms like Razorpay — including checkout flow, card input forms, UPI/Wallet selection, success & failure states, and authentication screens (OTP/3-D Secure). The design prioritizes trust, clarity, and frictionless conversion using strong visual hierarchy, micro-interactions, and error-prevention patterns. Delivered responsive layouts and interactive Figma prototype optimized for real-world product implementation.",
+      "icon": "/assets/projects/gateway/gateway1.png",
+      "link": "https://www.figma.com/proto/lAPJc4Ba6Whb68eeUYZcof/My-Works?node-id=1-463&t=LV8c0PCoSnWXM8EY-1",
+      "tech": ["Figma", "UI/UX Design", "Prototyping", "Responsive Design"],
+      "screenshots": [
+        "/assets/projects/gateway/gateway1.png",
+        "/assets/projects/gateway/gateway2.png"
+      ],
+      "role": "UI/UX Designer"
+    },
+    {
+      "slug": "govt-urdu-library-website",
+      "title": "Government Urdu Library — Website (Frontend)",
+      "role": "Frontend Developer",
+      "description": "Frontend development for the Government Urdu Library website",
+      "longDescription": "Developed the frontend of the website for the  (Patna) — implementing responsive layouts, navigation (Home, About Us, Gallery, Contact Us, E-Books, Login), hero sections, membership call-to-actions, and listing of collections (books, categories, featured/most-rated books). Worked to ensure the site reflects the library’s heritage and presents content (text, images, contact info) clearly and accessibly for users. Integrated static content including library details, membership prompts, contact information and multilingual presentation (English + Urdu).",
+      "icon": "/assets/projects/govtlibrary/icon.webp",
+      "link": "https://govturdulibrary.com/",
+      "tech": ["Next.js", "React", "Tailwind CSS", "Responsive UI"],
+      "screenshots": [
+        "/assets/projects/govtlibrary/govtlibrary1.png",
+        "/assets/projects/govtlibrary/govtlibrary2.png"
+      ]
+    },
+    {
+      "slug": "destiny-it-services-website",
+      "title": "Destiny IT Services — Company Website (Frontend)",
+      "role": "Frontend Developer",
+      "description": "Frontend development for the Destiny IT Services corporate website",
+      "longDescription": "Built the frontend of the corporate website for Destiny IT Services — implementing responsive layouts, navigation (Home, About, Services, Portfolio, Careers, Contact), service listing (CRM, ERP, Digital, Cloud, ITES, E-Governance, etc.), hero/banner sections, call-to-action components (Request Callback, Contact Us), and interactive UI elements. Ensured cross-device responsiveness, clean design, and smooth user-experience for clients seeking software, digital, and consulting services.",
+      "icon": "/assets/projects/destiny/icon.jpg",
+      "link": "https://destinyitservices.com/",
+      "tech": ["Next.js", "React", "Tailwind CSS", "Responsive UI"],
+      "screenshots": [
+        "/assets/projects/destiny/destiny1.png",
+        "/assets/projects/destiny/destiny2.png"
+      ]
+    },
+    {
+      "slug": "destiny-education-zone-website",
+      "title": "Destiny Education Zone — Consultancy Website (Frontend)",
+      "role": "Frontend Developer",
+      "description": "Frontend development for the Destiny Education Zone website",
+      "longDescription": "Developed the frontend for the Destiny Education Zone – an education consultancy portal offering services such as admission counseling for courses like B.Tech, MBA, MBBS/Medical, and foreign-admissions guidance. Implemented responsive layouts, navigation (Home, About, Courses, Exams, Contact, Login), interactive UI components (course lists, call-to-action buttons like WhatsApp contact, Request Callback), and a clean, user-friendly design to help students and parents browse services and offerings easily. Ensured accessibility and cross-device responsiveness while reflecting the brand’s educational consultancy identity and trustworthiness.",
+      "icon": "/assets/projects/dez/icon.svg",
+      "link": "https://destinyeducationzone.in/",
+      "tech": ["Next.js", "React", "Tailwind CSS", "Responsive UI"],
+      "screenshots": [
+        "/assets/projects/dez/dez1.png",
+        "/assets/projects/dez/dez2.png"
+      ]
+    },
+    {
+      "slug": "adhyayan-foundation-website",
+      "title": "Adhyayan Foundation — Organization Website (Frontend)",
+      "role": "Frontend Developer",
+      "description": "Frontend development for the Adhyayan Foundation website",
+      "longDescription": "Developed the frontend of the corporate website for  — implementing responsive layouts, navigation (Home, About Us, Programmes/Services, Impact, Stories, Contact), informational sections (mission, vision, school-improvement programmes, donor & supporter mentions), and interactive UI components such as enquiry forms and calls-to-action (Donate, Read More). Ensured accessibility, cross-device responsiveness, and clear presentation of content to reflect the Foundation’s educational mission and transparency. The design emphasizes readability, trustworthiness, and clean information architecture so that visitors (schools, donors, partners) can easily navigate and understand their work in improving education quality.  ",
+      "icon": "/assets/projects/adhyayan/icon.svg",
+      "link": "https://adhyayanfoundation.co.in/",
+      "tech": ["Next.js", "React", "Tailwind CSS", "Responsive UI"],
+      "screenshots": [
+        "/assets/projects/adhyayan/adhyayan1.png",
+        "/assets/projects/adhyayan/adhyayan2.png"
+      ]
+    },
+    {
+      "slug": "bakery-app",
+      "title": "Bakery Ordering Web App",
+      "role": "Frontend Developer",
+      "description": "A complete bakery ordering web app with product listings and checkout flow.",
+      "longDescription": "Built a full bakery ordering platform with product categories, item details, cart functionality, and checkout workflow. The interface includes a clean product grid, quantity selector, price calculation, and a responsive layout optimized for mobile users. Even though the UI was generated through AI prompts, the final outcome required refinement, component organization, and UX decisions to make it usable as a real app — not just an AI-generated template. The goal was to validate a fast prototype approach for creating real, working front-end products.",
+      "icon": "/assets/projects/bakery/icon.svg",
+      "link": "https://bakery-app-beta.vercel.app/",
+      "tech": ["Next.js", "React", "Tailwind CSS", "Responsive UI"],
+      "screenshots": [
+        "/assets/projects/bakery/bakery1.png",
+        "/assets/projects/bakery/bakery2.png"
+      ]
+    },
+    {
+      "slug": "caremedica-ecommerce",
+      "title": "CareMedica — Ecommerce Platform",
+      "role": "Full Stack Developer",
+      "description": "Ecommerce website built with Next.js, React and Shopify API integration.",
+      "longDescription": "Developed a full ecommerce storefront for CareMedica using Next.js and React with Shopify API integration for products, collections, cart, and checkout. Implemented optimized product pages, dynamic routing for collections, cart persistence, and secure Shopify checkout handoff. Built reusable UI components, handled API data mapping and error states, and ensured fast performance on both desktop and mobile. Focus was on creating a scalable, real-store architecture rather than a basic template.",
+      "icon": "/assets/projects/caremedica/icon.svg",
+      "link": "https://caremedica-next.vercel.app/",
+      "tech": [
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "Shopify Storefront API",
+        "SSR/ISR"
+      ],
+      "screenshots": [
+        "/assets/projects/caremedica/caremedica1.png",
+        "/assets/projects/caremedica/caremedica2.png"
+      ]
+    },
+    {
+      "slug": "fitness-flow-web",
+      "title": "FitnessFlow — Fitness & Workout Web App",
+      "role": "Frontend Developer",
+      "description": "Responsive fitness/workout website with programs, trainers, and membership sections.",
+      "longDescription": "Developed a complete fitness platform UI featuring workout programs, trainer sections, progress motivation modules, and membership call-to-actions. Includes a structured homepage, program highlights, nutrition/fitness guidance content, and signup flow for users. The build required refinement of layout, component structure, navigation logic, CTA positioning and mobile experience — beyond raw AI-generated UI. The focus was on turning a generated prototype into a real, coherent web product rather than a generic fitness template.",
+      "icon": "/assets/projects/fitness/icon.png",
+      "link": "https://fitness-flow-web.vercel.app/",
+      "tech": ["Next.js", "React", "Tailwind CSS", "Responsive UI"],
+      "screenshots": [
+        "/assets/projects/fitness/fitness1.png",
+        "/assets/projects/fitness/fitness2.png"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "title": "Frontend Technologies",
+      "skills": [
+        "React",
+        "Next.js",
+        "JavaScript",
+        "HTML/CSS",
+        "TailwindCSS",
+        "SCSS"
+      ]
+    },
+    {
+      "title": "UI/UX & Design",
+      "skills": [
+        "Figma",
+        "UI/UX Design",
+        "Prototyping",
+        "Wireframing",
+        "Responsive Design",
+        "Material-UI"
+      ]
+    },
+    {
+      "title": "State Management & APIs",
+      "skills": [
+        "TanStack Query",
+        "Redux Toolkit",
+        "REST API",
+        "API Integration"
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "slug": "react-performance-optimization",
+      "title": "React Performance Optimization Techniques",
+      "date": "November 15, 2024",
+      "views": "1,245",
+      "excerpt": "Learn how to optimize React applications for better performance using modern techniques and best practices.",
+      "category": "React",
+      "content": "\n      <p class=\"mb-4\">Performance optimization is crucial for creating smooth user experiences in React applications. Let's explore some key techniques.</p>\n      \n      <h2 class=\"text-xl font-bold mt-8 mb-4 text-zinc-800 dark:text-zinc-100\">Using React.memo</h2>\n      <p class=\"mb-4\">React.memo is a higher-order component that prevents unnecessary re-renders by memoizing the component output.</p>\n      \n      <pre><code class=\"language-javascript\">const MyComponent = React.memo(({ data }) => {\n  return <div>{data.title}</div>;\n});</code></pre>\n      \n      <h2 class=\"text-xl font-bold mt-8 mb-4 text-zinc-800 dark:text-zinc-100\">TanStack Query for Data Fetching</h2>\n      <p class=\"mb-4\">TanStack Query (formerly React Query) provides excellent caching and state management for server data.</p>\n      \n      <pre><code class=\"language-javascript\">const { data, isLoading } = useQuery({\n  queryKey: ['todos'],\n  queryFn: fetchTodos\n});</code></pre>\n      \n      <p class=\"mt-4\">These techniques can significantly improve your application's performance and user experience.</p>\n    "
+    },
+    {
+      "slug": "figma-to-code-workflow",
+      "title": "From Figma Design to Production Code",
+      "date": "October 28, 2024",
+      "views": "892",
+      "excerpt": "A practical guide on converting Figma designs into clean, maintainable React components.",
+      "category": "UI/UX",
+      "content": "\n      <p class=\"mb-4\">Translating designs from Figma to code is a crucial skill for frontend developers. Here's my workflow.</p>\n      \n      <h2 class=\"text-xl font-bold mt-8 mb-4 text-zinc-800 dark:text-zinc-100\">Understanding the Design System</h2>\n      <p class=\"mb-4\">Before writing any code, I analyze the Figma file to identify reusable components, color tokens, and spacing patterns.</p>\n      \n      <h2 class=\"text-xl font-bold mt-8 mb-4 text-zinc-800 dark:text-zinc-100\">Component Breakdown</h2>\n      <p class=\"mb-4\">I break down complex designs into smaller, reusable components. This makes the code more maintainable and follows React best practices.</p>\n      \n      <pre><code class=\"language-jsx\">// Example component structure\nconst Card = ({ title, description, image }) => (\n  <div className=\"card\">\n    <img src={image} alt={title} />\n    <h3>{title}</h3>\n    <p>{description}</p>\n  </div>\n);</code></pre>\n      \n      <p class=\"mt-4\">This systematic approach ensures pixel-perfect implementation while maintaining code quality.</p>\n    "
+    },
+    {
+      "slug": "tailwindcss-best-practices",
+      "title": "TailwindCSS Best Practices for Scalable Projects",
+      "date": "September 20, 2024",
+      "views": "1,567",
+      "excerpt": "Essential tips and patterns for using TailwindCSS effectively in large-scale applications.",
+      "category": "CSS",
+      "content": "\n      <p class=\"mb-4\">TailwindCSS is powerful, but it requires discipline to keep your codebase maintainable. Here are my best practices.</p>\n      \n      <h2 class=\"text-xl font-bold mt-8 mb-4 text-zinc-800 dark:text-zinc-100\">Custom Configuration</h2>\n      <p class=\"mb-4\">Always customize your tailwind.config.js to match your design system. This ensures consistency across the project.</p>\n      \n      <pre><code class=\"language-javascript\">module.exports = {\n  theme: {\n    extend: {\n      colors: {\n        primary: '#14b8a6',\n        secondary: '#6366f1'\n      }\n    }\n  }\n}</code></pre>\n      \n      <h2 class=\"text-xl font-bold mt-8 mb-4 text-zinc-800 dark:text-zinc-100\">Component Extraction</h2>\n      <p class=\"mb-4\">Extract repeated utility combinations into components to avoid duplication and improve readability.</p>\n      \n      <blockquote class=\"border-l-4 border-teal-500 pl-4 italic my-6 text-zinc-700 dark:text-zinc-300\">\n        \"Utility-first doesn't mean you can't create components.\" - Adam Wathan\n      </blockquote>\n      \n      <p>Following these practices will help you build scalable, maintainable applications with Tailwind.</p>\n    "
+    }
+  ]
+}

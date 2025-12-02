@@ -1,5 +1,5 @@
 import React from 'react';
-import { SKILLS } from '@/lib/constants';
+import { getSkills } from '@/lib/db';
 import { Terminal, Cpu, PenTool } from 'lucide-react';
 
 const getIconForCategory = (title: string) => {
@@ -8,7 +8,9 @@ const getIconForCategory = (title: string) => {
     return PenTool;
 };
 
-export default function Skills() {
+export default async function Skills() {
+  const skills = await getSkills();
+
   return (
     <div className="space-y-12 pt-8">
       <div className="max-w-2xl">
@@ -22,7 +24,7 @@ export default function Skills() {
       </div>
 
       <div className="space-y-10">
-        {SKILLS.map((category) => {
+        {skills.map((category) => {
             const Icon = getIconForCategory(category.title);
             return (
                 <div key={category.title} className="rounded-2xl border border-zinc-100 p-6 md:p-8 dark:border-zinc-700/40 bg-white dark:bg-zinc-900 shadow-sm">

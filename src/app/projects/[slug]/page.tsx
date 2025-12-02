@@ -1,22 +1,15 @@
-'use client';
-
 import React from 'react';
-import { useParams } from 'next/navigation';
+import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { PROJECTS } from '@/lib/constants';
+import { getProject } from '@/lib/db';
 import { ArrowLeft, Github, Layers, Globe } from 'lucide-react';
 
-export default function ProjectDetails() {
-  const { slug } = useParams();
-  const project = PROJECTS.find((p) => p.slug === slug);
+export default async function ProjectDetails({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const project = await getProject(slug);
 
   if (!project) {
-    return (
-        <div className="pt-20 text-center">
-            <h1 className="text-2xl font-bold">Project not found</h1>
-            <Link href="/projects" className="text-teal-500 mt-4 block">Back to Projects</Link>
-        </div>
-    );
+    notFound();
   }
 
   return (
@@ -41,7 +34,7 @@ export default function ProjectDetails() {
         
         <div className="space-y-12">
             <header className="flex flex-col gap-6">
-                <div className="h-20 w-20 rounded-2xl bg-white dark:bg-zinc-800 p-2 shadow-sm ring-1 ring-zinc-900/5 dark:ring-white/10 overflow-hidden">
+                <div className="h-20 w-fit rounded-2xl bg-white dark:bg-zinc-800 p-2 shadow-sm ring-1 ring-zinc-900/5 dark:ring-white/10 overflow-hidden">
                     <img src={project.icon} alt="" className="h-full w-full rounded-xl object-cover" />
                 </div>
                 
@@ -82,11 +75,11 @@ export default function ProjectDetails() {
                     By leveraging modern web technologies, we achieved a perfect 100 score on Lighthouse for Performance, Accessibility, Best Practices, and SEO.
                  </p>
                  
-                 <h3 className="text-zinc-900 dark:text-zinc-100">Core Features</h3>
+                 <h3 className="text-zinc-900 dark:text-zinc-100 mt-6 mb-3 font-semibold">Core Features</h3>
                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 pl-0 list-none my-0">
                     {['Real-time updates', 'Offline support', 'Dark mode', 'Responsive design', 'Accessible UI', 'Cloud sync'].map((feature, i) => (
                         <li key={i} className="flex items-center gap-2 pl-0 text-zinc-600 dark:text-zinc-400">
-                            <span className="h-1.5 w-1.5 rounded-full bg-teal-500 flex-shrink-0" />
+                            <span className="h-1.5 w-1.5 rounded-full bg-teal-500 shrink-0" />
                             <span>{feature}</span>
                         </li>
                     ))}
@@ -150,7 +143,7 @@ export default function ProjectDetails() {
                         <div className="border-t border-zinc-100 dark:border-zinc-800"></div>
                         <div className="flex justify-between text-sm">
                             <dt className="text-zinc-500 dark:text-zinc-400">Role</dt>
-                            <dd className="font-medium text-zinc-900 dark:text-zinc-100">Full Stack</dd>
+                            <dd className="font-medium text-zinc-900 dark:text-zinc-100">{project.role}</dd>
                         </div>
                     </dl>
                  </div>

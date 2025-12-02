@@ -1,9 +1,11 @@
 import React from 'react';
-import { PROJECTS } from '@/lib/constants';
+import { getProjects } from '@/lib/db';
 import { Link as LinkIcon } from 'lucide-react';
 import Link from 'next/link';
 
-export default function Projects() {
+export default async function Projects() {
+  const projects = await getProjects();
+
   return (
     <div className="space-y-12 pt-8">
       <div className="max-w-2xl">
@@ -16,10 +18,10 @@ export default function Projects() {
       </div>
 
       <div className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
-        {PROJECTS.map((project, idx) => (
+        {projects.map((project, idx) => (
           <div key={idx} className="group relative flex flex-col items-start hover:bg-zinc-50 dark:hover:bg-zinc-800/50 p-4 -m-4 rounded-2xl transition-colors duration-200">
-            <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <img src={project.icon} alt="" className="h-8 w-8 rounded-full object-cover" />
+            <div className="relative z-10 flex h-12 w-fit items-center justify-center">
+              <img src={project.icon} alt="" className="h-8 object-contain" />
             </div>
             <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100 group-hover:text-teal-500 transition-colors">
               <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl"></div>

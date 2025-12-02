@@ -1,62 +1,12 @@
-'use client';
-
-import React, { useEffect } from 'react';
-import { useParams } from 'next/navigation';
+import React from 'react';
 import Link from 'next/link';
-import { BLOG_POSTS } from '@/lib/constants';
-import { ArrowLeft, Eye, Calendar } from 'lucide-react';
-import clsx from 'clsx';
+import { getArticle } from '@/lib/db';
+import { ArrowLeft, Eye, Calendar, Clock, Tag } from 'lucide-react';
+import ArticleContent from './ArticleContent';
 
-const ContentRenderer = ({ htmlContent }: { htmlContent: string }) => {
-  useEffect(() => {
-    const preBlocks = document.querySelectorAll('.article-content pre');
-    
-    preBlocks.forEach((pre) => {
-      if (pre.querySelector('.copy-btn')) return;
-
-      const code = pre.querySelector('code')?.innerText || '';
-      
-      const wrapper = document.createElement('div');
-      wrapper.className = 'relative group';
-      
-      const button = document.createElement('button');
-      button.className = 'copy-btn absolute top-3 right-3 p-2 rounded-md bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-500 hover:text-teal-500 dark:text-zinc-400 dark:hover:text-teal-400 opacity-0 group-hover:opacity-100 transition-all duration-200 z-10 shadow-sm';
-      button.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`;
-      button.title = "Copy Code";
-
-      button.onclick = () => {
-        navigator.clipboard.writeText(code);
-        button.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
-        setTimeout(() => {
-            button.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`;
-        }, 2000);
-      };
-
-      pre.parentNode?.insertBefore(wrapper, pre);
-      wrapper.appendChild(pre);
-      wrapper.appendChild(button);
-    });
-  }, [htmlContent]);
-
-  return (
-    <div 
-        className={clsx(
-            "article-content prose prose-zinc dark:prose-invert prose-lg max-w-none",
-            "prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-zinc-800 dark:prose-headings:text-zinc-100",
-            "prose-a:text-teal-500 hover:prose-a:text-teal-600 dark:prose-a:text-teal-400 no-underline hover:prose-a:underline",
-            "prose-img:rounded-2xl prose-img:shadow-xl prose-img:border prose-img:border-zinc-200 dark:prose-img:border-zinc-700/50",
-            "prose-pre:bg-zinc-50 dark:prose-pre:bg-zinc-900/50 prose-pre:border prose-pre:border-zinc-200 dark:prose-pre:border-zinc-700/50 prose-pre:rounded-2xl prose-pre:shadow-sm",
-            "prose-code:text-zinc-700 dark:prose-code:text-zinc-300 prose-code:bg-transparent prose-code:font-medium prose-code:before:content-none prose-code:after:content-none",
-            "prose-blockquote:border-l-teal-500 prose-blockquote:bg-zinc-50 dark:prose-blockquote:bg-zinc-900/50 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-lg prose-blockquote:not-italic"
-        )}
-        dangerouslySetInnerHTML={{ __html: htmlContent || '' }}
-    />
-  );
-};
-
-export default function Article() {
-  const { slug } = useParams();
-  const post = BLOG_POSTS.find((p) => p.slug === slug);
+export default async function Article({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = await getArticle(slug);
 
   if (!post) {
     return (
@@ -67,73 +17,99 @@ export default function Article() {
     );
   }
 
+  // Calculate estimated reading time (rough estimate: 200 words per minute)
+  const wordCount = post.content?.split(/\s+/).length || 0;
+  const readingTime = Math.ceil(wordCount / 200);
+
   return (
     <article className="relative lg:px-8 xl:px-12 pt-8">
-      <div className="hidden xl:block absolute left-0 top-10">
+      {/* Back Button - Desktop */}
+      <div className="hidden xl:block fixed left-8 top-24">
         <Link 
           href="/articles" 
-          className="group flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 transition dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20"
+          className="group flex h-12 w-12 items-center justify-center rounded-full bg-white dark:bg-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 transition hover:shadow-xl dark:ring-white/10 dark:hover:ring-white/20"
           aria-label="Go back to articles"
         >
-          <ArrowLeft className="h-4 w-4 stroke-zinc-500 transition group-hover:stroke-zinc-700 dark:stroke-zinc-500 dark:group-hover:stroke-zinc-400" />
+          <ArrowLeft className="h-5 w-5 stroke-zinc-500 transition group-hover:stroke-teal-500 dark:stroke-zinc-400 dark:group-hover:stroke-teal-400" />
         </Link>
       </div>
 
-      <div className="mx-auto max-w-2xl">
+      <div className="mx-auto max-w-3xl">
+        {/* Back Button - Mobile */}
         <Link 
             href="/articles" 
-            className="xl:hidden group mb-8 flex h-9 w-9 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 transition dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20"
+            className="xl:hidden group mb-8 inline-flex items-center gap-2 text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-teal-500 dark:hover:text-teal-400 transition-colors"
         >
-            <ArrowLeft className="h-4 w-4 stroke-zinc-500 transition group-hover:stroke-zinc-700 dark:stroke-zinc-500 dark:group-hover:stroke-zinc-400" />
+            <ArrowLeft className="h-4 w-4" />
+            Back to Articles
         </Link>
 
-        <header className="flex flex-col space-y-8 mb-12">
-          <div className="flex items-center gap-3 text-sm text-zinc-400 dark:text-zinc-500">
-             <span className="h-6 w-[2px] rounded-full bg-teal-500"></span>
-             <time dateTime={post.date} className="font-medium text-zinc-600 dark:text-zinc-400">
-                {post.date}
-             </time>
-             {post.category && (
-               <>
-                 <span>/</span>
-                 <span className="text-teal-500 font-medium uppercase tracking-wider text-xs">
-                    {post.category}
-                 </span>
-               </>
-             )}
+        {/* Article Header */}
+        <header className="mb-12 pb-8 border-b border-zinc-200 dark:border-zinc-800">
+          {/* Category & Date */}
+          <div className="flex flex-wrap items-center gap-4 text-sm mb-6">
+            {post.category && (
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-100 dark:bg-teal-900/30 text-teal-700 dark:text-teal-400 font-medium">
+                <Tag size={14} />
+                {post.category}
+              </span>
+            )}
+            <time dateTime={post.date} className="flex items-center gap-1.5 text-zinc-500 dark:text-zinc-400">
+              <Calendar size={14} />
+              {post.date}
+            </time>
           </div>
           
-          <h1 className="text-4xl font-extrabold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl leading-[1.15]">
+          {/* Title */}
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-50 leading-tight mb-6">
             {post.title}
           </h1>
 
-          <div className="flex flex-wrap items-center gap-6 text-sm text-zinc-500 dark:text-zinc-400 border-b border-zinc-100 dark:border-zinc-800 pb-8">
-             <span className="flex items-center gap-2">
-                <Eye size={16} className="text-zinc-400" /> 
-                {post.views} views
-             </span>
-             <span className="flex items-center gap-2">
-                <Calendar size={16} className="text-zinc-400" /> 
-                Updated {post.date}
-             </span>
+          {/* Meta Info */}
+          <div className="flex flex-wrap items-center gap-6 text-sm text-zinc-500 dark:text-zinc-400">
+            <span className="flex items-center gap-2">
+              <Eye size={16} className="text-zinc-400" /> 
+              {post.views} views
+            </span>
+            <span className="flex items-center gap-2">
+              <Clock size={16} className="text-zinc-400" /> 
+              {readingTime} min read
+            </span>
           </div>
         </header>
 
-        <div className="mb-24">
-            <ContentRenderer htmlContent={post.content || ''} />
+        {/* Article Content */}
+        <div className="mb-16">
+          <ArticleContent htmlContent={post.content || ''} />
         </div>
         
-        <div className="border-t border-zinc-200 dark:border-zinc-800 pt-8 flex justify-between items-center">
-            <Link href="/articles" className="text-sm font-semibold text-zinc-500 hover:text-teal-500 transition-colors">
-                &larr; More Articles
-            </Link>
-            <button 
-                className="text-sm font-semibold text-zinc-500 hover:text-teal-500 transition-colors" 
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        {/* Article Footer */}
+        <footer className="border-t border-zinc-200 dark:border-zinc-800 pt-8 mt-12">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <Link 
+              href="/articles" 
+              className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-600 dark:text-zinc-400 hover:text-teal-500 dark:hover:text-teal-400 transition-colors"
             >
-                Scroll to Top
-            </button>
-        </div>
+              <ArrowLeft size={16} />
+              More Articles
+            </Link>
+            
+            {/* Share buttons could go here */}
+            <div className="flex items-center gap-3">
+              <span className="text-sm text-zinc-500 dark:text-zinc-400">Share:</span>
+              <button className="p-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-600 dark:text-zinc-400 transition-colors">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </button>
+              <button className="p-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-600 dark:text-zinc-400 transition-colors">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </footer>
       </div>
     </article>
   );

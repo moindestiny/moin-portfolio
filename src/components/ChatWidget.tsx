@@ -8,7 +8,7 @@ export const ChatWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState<ChatMessage[]>([
-    { id: '1', role: MessageRole.MODEL, text: "Hi! I'm Alex's virtual assistant. This is a demo chat. Feel free to leave a message!" }
+    { id: '1', role: MessageRole.MODEL, text: "Hi! I'm Moin's virtual assistant. Feel free to leave a message!" }
   ]);
   const [isThinking, setIsThinking] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -40,7 +40,7 @@ export const ChatWidget: React.FC = () => {
       const modelMsg: ChatMessage = {
         id: (Date.now() + 1).toString(),
         role: MessageRole.MODEL,
-        text: "Thanks for reaching out! This is a static demo, so I can't actually answer, but you can email me at hello@example.com."
+        text: `Thanks for reaching out! I don't have the ability to respond in real time, so I can't actually answer, but you can email me at moinahmaddev@gmail.com.`
       };
       
       setMessages(prev => [...prev, modelMsg]);
@@ -90,7 +90,7 @@ export const ChatWidget: React.FC = () => {
                 )}
               >
                 <div className={clsx(
-                  "w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 border",
+                  "w-8 h-8 rounded-full flex items-center justify-center shrink-0 border",
                   msg.role === MessageRole.USER 
                     ? "bg-zinc-100 dark:bg-zinc-800 border-zinc-200 dark:border-zinc-700" 
                     : "bg-teal-50 dark:bg-teal-900/20 border-teal-100 dark:border-teal-900/50"
@@ -150,7 +150,7 @@ export const ChatWidget: React.FC = () => {
         onClick={() => setIsOpen(!isOpen)}
         className="group relative flex items-center justify-center w-14 h-14 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
       >
-        <div className="absolute inset-0 bg-gradient-to-tr from-teal-500/20 to-indigo-500/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+        <div className="absolute inset-0 bg-linear-to-tr from-teal-500/20 to-indigo-500/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
         {isOpen ? (
           <X className="text-zinc-600 dark:text-zinc-300 relative z-10" />
         ) : (

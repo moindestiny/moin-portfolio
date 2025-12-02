@@ -50,7 +50,7 @@ export const Navbar = () => {
                 Moin Dev
               </span>
               <div className={clsx("h-10 w-10 rounded-full bg-zinc-100 dark:bg-zinc-800 p-0.5 shadow-sm ring-1 ring-zinc-900/5 dark:ring-white/10 overflow-hidden transition-all duration-300 ease-in-out", isScrolled ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 translate-y-2 absolute")}>
-                 <img src="https://picsum.photos/id/64/400/400" alt="Avatar" className="w-full h-full rounded-full object-cover" />
+                 <img src="/my-img.png" alt="Avatar" className="w-full h-full rounded-full object-cover" />
               </div>
            </Link>
         </div>
