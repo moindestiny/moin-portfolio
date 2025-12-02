@@ -8,6 +8,8 @@ export interface Project {
   tech: string[];
   screenshots?: string[];
   role: string;
+  year: number;
+  for: string;
 }
 
 export interface BlogPost {

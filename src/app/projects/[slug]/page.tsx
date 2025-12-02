@@ -133,12 +133,12 @@ export default async function ProjectDetails({ params }: { params: Promise<{ slu
                     <dl className="space-y-4">
                         <div className="flex justify-between text-sm">
                             <dt className="text-zinc-500 dark:text-zinc-400">Client</dt>
-                            <dd className="font-medium text-zinc-900 dark:text-zinc-100">Personal</dd>
+                            <dd className="font-medium text-zinc-900 dark:text-zinc-100">{project.for}</dd>
                         </div>
                         <div className="border-t border-zinc-100 dark:border-zinc-800"></div>
                         <div className="flex justify-between text-sm">
                             <dt className="text-zinc-500 dark:text-zinc-400">Year</dt>
-                            <dd className="font-medium text-zinc-900 dark:text-zinc-100">2023</dd>
+                            <dd className="font-medium text-zinc-900 dark:text-zinc-100">{project.year}</dd>
                         </div>
                         <div className="border-t border-zinc-100 dark:border-zinc-800"></div>
                         <div className="flex justify-between text-sm">

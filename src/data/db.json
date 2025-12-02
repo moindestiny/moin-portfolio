@@ -12,7 +12,9 @@
         "/assets/projects/koderoute/koderoute1.png",
         "/assets/projects/koderoute/koderoute2.png"
       ],
-      "role": "Full Stack Developer"
+      "role": "Full Stack Developer",
+      "year": 2025,
+      "for": "Company"
     },
     {
       "slug": "pretender-dashboard",
@@ -26,7 +28,9 @@
         "/assets/projects/pretender/pretender1.png",
         "/assets/projects/pretender/pretender2.png"
       ],
-      "role": "Frontend Developer"
+      "role": "Frontend Developer",
+      "year": 2025,
+      "for": "Company"
     },
     {
       "slug": "unityfusion-website",
@@ -40,7 +44,9 @@
         "/assets/projects/unityfusion/unityfusion1.png",
         "/assets/projects/unityfusion/unityfusion2.png"
       ],
-      "role": "UI/UX Designer"
+      "role": "UI/UX Designer",
+      "year": 2025,
+      "for": "Company"
     },
     {
       "slug": "payment-gateway",
@@ -54,12 +60,15 @@
         "/assets/projects/gateway/gateway1.png",
         "/assets/projects/gateway/gateway2.png"
       ],
-      "role": "UI/UX Designer"
+      "role": "UI/UX Designer",
+      "year": 2025,
+      "for": "Company"
     },
     {
       "slug": "govt-urdu-library-website",
       "title": "Government Urdu Library — Website (Frontend)",
       "role": "Frontend Developer",
+      "year": 2024,
       "description": "Frontend development for the Government Urdu Library website",
       "longDescription": "Developed the frontend of the website for the  (Patna) — implementing responsive layouts, navigation (Home, About Us, Gallery, Contact Us, E-Books, Login), hero sections, membership call-to-actions, and listing of collections (books, categories, featured/most-rated books). Worked to ensure the site reflects the library’s heritage and presents content (text, images, contact info) clearly and accessibly for users. Integrated static content including library details, membership prompts, contact information and multilingual presentation (English + Urdu).",
       "icon": "/assets/projects/govtlibrary/icon.webp",
@@ -74,6 +83,8 @@
       "slug": "destiny-it-services-website",
       "title": "Destiny IT Services — Company Website (Frontend)",
       "role": "Frontend Developer",
+      "year": 2024,
+      "for": "Company",
       "description": "Frontend development for the Destiny IT Services corporate website",
       "longDescription": "Built the frontend of the corporate website for Destiny IT Services — implementing responsive layouts, navigation (Home, About, Services, Portfolio, Careers, Contact), service listing (CRM, ERP, Digital, Cloud, ITES, E-Governance, etc.), hero/banner sections, call-to-action components (Request Callback, Contact Us), and interactive UI elements. Ensured cross-device responsiveness, clean design, and smooth user-experience for clients seeking software, digital, and consulting services.",
       "icon": "/assets/projects/destiny/icon.jpg",
@@ -88,6 +99,8 @@
       "slug": "destiny-education-zone-website",
       "title": "Destiny Education Zone — Consultancy Website (Frontend)",
       "role": "Frontend Developer",
+      "year": 2024,
+      "for": "Company",
       "description": "Frontend development for the Destiny Education Zone website",
       "longDescription": "Developed the frontend for the Destiny Education Zone – an education consultancy portal offering services such as admission counseling for courses like B.Tech, MBA, MBBS/Medical, and foreign-admissions guidance. Implemented responsive layouts, navigation (Home, About, Courses, Exams, Contact, Login), interactive UI components (course lists, call-to-action buttons like WhatsApp contact, Request Callback), and a clean, user-friendly design to help students and parents browse services and offerings easily. Ensured accessibility and cross-device responsiveness while reflecting the brand’s educational consultancy identity and trustworthiness.",
       "icon": "/assets/projects/dez/icon.svg",
@@ -102,6 +115,8 @@
       "slug": "adhyayan-foundation-website",
       "title": "Adhyayan Foundation — Organization Website (Frontend)",
       "role": "Frontend Developer",
+      "year": 2025,
+      "for": "Company",
       "description": "Frontend development for the Adhyayan Foundation website",
       "longDescription": "Developed the frontend of the corporate website for  — implementing responsive layouts, navigation (Home, About Us, Programmes/Services, Impact, Stories, Contact), informational sections (mission, vision, school-improvement programmes, donor & supporter mentions), and interactive UI components such as enquiry forms and calls-to-action (Donate, Read More). Ensured accessibility, cross-device responsiveness, and clear presentation of content to reflect the Foundation’s educational mission and transparency. The design emphasizes readability, trustworthiness, and clean information architecture so that visitors (schools, donors, partners) can easily navigate and understand their work in improving education quality.  ",
       "icon": "/assets/projects/adhyayan/icon.svg",
@@ -116,6 +131,8 @@
       "slug": "bakery-app",
       "title": "Bakery Ordering Web App",
       "role": "Frontend Developer",
+      "year": 2025,
+      "for": "Company",
       "description": "A complete bakery ordering web app with product listings and checkout flow.",
       "longDescription": "Built a full bakery ordering platform with product categories, item details, cart functionality, and checkout workflow. The interface includes a clean product grid, quantity selector, price calculation, and a responsive layout optimized for mobile users. Even though the UI was generated through AI prompts, the final outcome required refinement, component organization, and UX decisions to make it usable as a real app — not just an AI-generated template. The goal was to validate a fast prototype approach for creating real, working front-end products.",
       "icon": "/assets/projects/bakery/icon.svg",
@@ -130,6 +147,8 @@
       "slug": "caremedica-ecommerce",
       "title": "CareMedica — Ecommerce Platform",
       "role": "Full Stack Developer",
+      "year": 2025,
+      "for": "Personal Client",
       "description": "Ecommerce website built with Next.js, React and Shopify API integration.",
       "longDescription": "Developed a full ecommerce storefront for CareMedica using Next.js and React with Shopify API integration for products, collections, cart, and checkout. Implemented optimized product pages, dynamic routing for collections, cart persistence, and secure Shopify checkout handoff. Built reusable UI components, handled API data mapping and error states, and ensured fast performance on both desktop and mobile. Focus was on creating a scalable, real-store architecture rather than a basic template.",
       "icon": "/assets/projects/caremedica/icon.svg",
@@ -150,6 +169,8 @@
       "slug": "fitness-flow-web",
       "title": "FitnessFlow — Fitness & Workout Web App",
       "role": "Frontend Developer",
+      "year": 2025,
+      "for": "Company",
       "description": "Responsive fitness/workout website with programs, trainers, and membership sections.",
       "longDescription": "Developed a complete fitness platform UI featuring workout programs, trainer sections, progress motivation modules, and membership call-to-actions. Includes a structured homepage, program highlights, nutrition/fitness guidance content, and signup flow for users. The build required refinement of layout, component structure, navigation logic, CTA positioning and mobile experience — beyond raw AI-generated UI. The focus was on turning a generated prototype into a real, coherent web product rather than a generic fitness template.",
       "icon": "/assets/projects/fitness/icon.png",
