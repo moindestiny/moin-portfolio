@@ -83,6 +83,7 @@ export async function updateProjectAction(formData: FormData) {
     link: formData.get('link') as string,
     tech: techString.split(',').map(s => s.trim()).filter(Boolean),
     screenshots: screenshotsString.split(',').map(s => s.trim()).filter(Boolean),
+    role: formData.get('role') as string,
   };
 
   await saveProject(project);
