@@ -174,7 +174,7 @@ export default async function Home() {
               ))}
             </ol>
             <a
-              href="/Moin-Resume.pdf"
+              href="/Resume.pdf"
               download
               className="group mt-6 w-full flex items-center justify-center gap-2 rounded-md bg-zinc-50 py-2 text-sm font-medium text-zinc-900 transition active:bg-zinc-100 active:text-zinc-900/60 dark:bg-zinc-800/50 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50"
             >
