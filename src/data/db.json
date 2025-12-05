@@ -22,7 +22,7 @@
       "description": "Dashboard for managing tenders, MIS reports, and work orders",
       "longDescription": "Developed a comprehensive dashboard for managing tenders, MIS reports, and work orders. Implemented frontend modules with REST APIs, and used TanStack Query for efficient state management and real-time data caching across modules. Features include advanced filtering, sorting, and real-time updates for better workflow management.",
       "icon": "/assets/projects/pretender/icon.svg",
-      "link": "#",
+      "link": "https://pretender-ui.vercel.app/login",
       "tech": ["React", "TanStack Query", "REST API", "Redux Toolkit"],
       "screenshots": [
         "/assets/projects/pretender/pretender1.png",
